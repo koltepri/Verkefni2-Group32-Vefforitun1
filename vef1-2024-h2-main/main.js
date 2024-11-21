@@ -1,26 +1,30 @@
-import { fetcher } from "./lib/fetcher.js";
-import { renderContentPage } from "./lib/pages/content-page.js";
-import { renderIndexPage } from "./lib/pages/index-page.js";
 import { renderSubpage } from "./lib/pages/sub-page.js";
+import { renderIndexPage } from "./lib/pages/index-page.js";
+// import { renderKeywordsPage } from "./lib/pages/keywords-page.js";
+// import { renderLecturesPage } from "./lib/pages/lectures-page.js";
+// import { renderQuestionsPage } from "./lib/pages/questions-page.js";
+import { fetcher } from "./lib/fetcher.js";
 
 async function render(root, querystring) {
-  const mainIndexJson = await fetcher("data/index.json");
+  const indexJson = await fetcher("./data/index.json");
 
   const params = new URLSearchParams(querystring);
   const type = params.get("type");
   const content = params.get("content");
-
-  console.log(type, content);
+  console.log(type);
+  console.log(content);
 
   if (!type) {
-    return renderIndexPage(root, mainIndexJson);
+    await renderIndexPage(root, indexJson);
+  } else if (content === "keywords") {
+    await renderKeywordsPage(root, indexJson, type, content);
+  } else if (content === "lectures") {
+    await renderLecturesPage(root, indexJson, type, content);
+  } else if (content === "questions") {
+    await renderQuestionsPage(root, indexJson, type, content);
+  } else {
+    await renderSubpage(root, indexJson, type);
   }
-
-  if (content) {
-    return renderContentPage(root, mainIndexJson);
-  }
-
-  renderSubpage(root, mainIndexJson, type);
 }
 
 const root = document.querySelector("#app");
