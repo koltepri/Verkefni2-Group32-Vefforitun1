@@ -1,0 +1,28 @@
+	{
+  "name": "vef1-2024-h2",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koltepri/Group3-Vefforritun1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint main.js lib/** && stylelint *.scss",
+    "fix": "npm run lint -- --fix"
+
+  },
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "sass": "^1.80.6",
+    "stylelint": "^16.10.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
+    "stylelint-config-standard": "^36.0.1",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3"
+  }
+}
