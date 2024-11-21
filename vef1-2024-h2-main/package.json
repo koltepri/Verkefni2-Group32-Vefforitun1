@@ -10,8 +10,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint main.js lib/** && stylelint *.scss",
-    "fix": "npm run lint -- --fix"
-
+    "fix": "npm run lint -- --fix",
+    "sass": "sass style.scss style.css -w"
   },
   "devDependencies": {
     "eslint": "^9.15.0",
@@ -19,6 +19,7 @@
     "stylelint": "^16.10.0",
     "stylelint-config-sass-guidelines": "^12.1.0",
     "stylelint-config-standard": "^36.0.1",
+    "sass": "^1.80.2",
     "vite": "^5.4.10"
   },
   "dependencies": {

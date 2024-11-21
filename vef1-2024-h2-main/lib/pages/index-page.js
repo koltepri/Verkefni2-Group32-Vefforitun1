@@ -1,24 +1,24 @@
-import { renderNavigation } from '../components/navigation';
-import { el } from '../elements';
+import { renderNavigation } from "../components/navigation";
+import { el } from "../elements";
 
 export function renderIndexPage(root, indexJson) {
-  console.log('rendering', root, indexJson.title);
+  console.log("rendering", root, indexJson.title);
 
-  const headerElement = el('header', {}, el('h1', {}, indexJson.title));
+  const headerElement = el("header", {}, el("h1", {}, indexJson.title));
 
   headerElement.appendChild(renderNavigation(indexJson.navigation));
 
   const mainElement = el(
-    'main',
+    "main",
     {},
     el(
-      'section',
+      "section",
       {},
-      el('p', {}, indexJson.description),
+      el("p", {}, indexJson.description),
       renderNavigation(indexJson.navigation),
     ),
   );
-  const footerElement = el('footer', {}, indexJson.footer);
+  const footerElement = el("footer", {}, indexJson.footer);
 
   root.appendChild(headerElement);
   root.appendChild(mainElement);
