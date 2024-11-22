@@ -3,7 +3,11 @@ import { el } from "../elements.js";
 import { fetcher } from "../fetcher.js";
 
 export async function renderSubpage(root, indexJson, type) {
-  const headerElement = el("header", {}, el("h1", {}, indexJson.title));
+  const headerElement = el(
+    "header",
+    { class: "text-center py-4 mb-4 bg-light" }, // Centered header with padding
+    el("h1", {}, indexJson.title),
+  );
   headerElement.appendChild(renderNavigation(indexJson.navigation));
 
   let mainElement;
@@ -51,7 +55,7 @@ export async function renderSubpage(root, indexJson, type) {
 
   const footerElement = el(
     "footer",
-    { class: "text-center py-4 mt-5" },
+    { class: "text-center py-4 mt-5 bg-light" }, // Styled footer
     indexJson.footer,
   );
 
