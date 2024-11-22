@@ -3,15 +3,17 @@ import { el } from "../elements.js";
 import { fetcher } from "../fetcher.js";
 
 export async function renderSubpage(root, indexJson, type) {
+  const foundType = indexJson.navigation.some((i) => i.slug === type);
+  if (foundType == null) console.log("what");
+  console.log("type is " + type);
   const headerElement = el(
     "header",
-    { class: "text-center py-4 mb-4 bg-light" }, // Centered header with padding
+    { class: "text-center py-4 mb-4 bg-light" },
     el("h1", {}, indexJson.title),
   );
   headerElement.appendChild(renderNavigation(indexJson.navigation));
 
   let mainElement;
-  const foundType = indexJson.navigation.some((i) => i.slug === type);
 
   if (!foundType) {
     mainElement = el("main", {}, el("p", {}, "Fannst ekki"));
@@ -55,7 +57,7 @@ export async function renderSubpage(root, indexJson, type) {
 
   const footerElement = el(
     "footer",
-    { class: "text-center py-4 mt-5 bg-light" }, // Styled footer
+    { class: "text-center py-4 mt-5 bg-light" },
     indexJson.footer,
   );
 
