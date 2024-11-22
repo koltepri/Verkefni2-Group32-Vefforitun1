@@ -3,9 +3,6 @@ import { el } from "../elements.js";
 import { fetcher } from "../fetcher.js";
 
 export async function renderSubpage(root, indexJson, type) {
-  const foundType = indexJson.navigation.some((i) => i.slug === type);
-  if (foundType == null) console.log("what");
-  console.log("type is " + type);
   const headerElement = el(
     "header",
     { class: "text-center py-4 mb-4 bg-light" },
@@ -14,6 +11,7 @@ export async function renderSubpage(root, indexJson, type) {
   headerElement.appendChild(renderNavigation(indexJson.navigation));
 
   let mainElement;
+  const foundType = indexJson.navigation.some((i) => i.slug === type);
 
   if (!foundType) {
     mainElement = el("main", {}, el("p", {}, "Fannst ekki"));

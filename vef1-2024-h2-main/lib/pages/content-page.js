@@ -2,8 +2,6 @@ import { renderNavigation } from "../components/navigation";
 import { el } from "../elements";
 
 export function renderContentPage(root, indexJson, contentJson) {
-  console.log("rendering content page", root, indexJson.title);
-
   const headerElement = el("header", {}, el("h1", {}, indexJson.title));
 
   headerElement.appendChild(renderNavigation(indexJson.navigation));

@@ -12,8 +12,8 @@ async function render(root, querystring) {
   const params = new URLSearchParams(querystring);
   const type = params.get("type");
   const content = params.get("content");
-  console.log(type);
-  console.log(content);
+  // console.log(type);
+  // console.log(content);
 
   if (!type) {
     await renderIndexPage(root, indexJson);

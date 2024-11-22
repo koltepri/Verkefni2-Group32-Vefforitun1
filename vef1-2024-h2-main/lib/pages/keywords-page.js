@@ -17,8 +17,6 @@ function createKeywordHTML(keyword) {
 }
 
 export async function renderKeywordsPage(root, indexJson, type, content) {
-  console.log("rendering keywords page", root, indexJson.title);
-
   const headerElement = e(
     "header",
     { class: "text-center py-4 mb-4 bg-light" },

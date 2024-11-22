@@ -2,8 +2,6 @@ import { renderNavigation } from "../components/navigation";
 import { el } from "../elements";
 
 export function renderIndexPage(root, indexJson) {
-  console.log("rendering", root, indexJson.title);
-
   const headerElement = el(
     "header",
     { class: "text-center py-4 mb-4 bg-light" },

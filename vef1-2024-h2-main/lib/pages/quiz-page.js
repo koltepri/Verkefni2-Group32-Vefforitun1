@@ -34,8 +34,6 @@ function createQuizHTML(quiz) {
   );
 }
 export async function renderQuizPage(root, indexJson, type, content) {
-  console.log("rendering quiz page", root, indexJson.title);
-
   const headerElement = e(
     "header",
     { class: "text-center py-4 mb-4 bg-light" },
