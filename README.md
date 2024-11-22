@@ -1,6 +1,6 @@
 # Verkefni2-Group3-Vefforitun1
 
-Óðinn Ágústsson : Einstaklingsverkefni
+Óðinn Ágústsson - oda11@hi.is - koltepri : Einstaklingsverkefni
 
 Bootstrap notað fyrir styling
 
