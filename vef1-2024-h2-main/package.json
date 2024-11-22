@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint main.js lib/**",
+		"lint": "eslint main.js lib/** && stylelint '**/*.css'",
     "fix": "npm run lint -- --fix",
     "sass": "sass style.scss style.css -w"
   },
