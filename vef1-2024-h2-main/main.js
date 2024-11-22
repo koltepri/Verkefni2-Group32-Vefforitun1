@@ -1,8 +1,8 @@
 import { renderSubpage } from "./lib/pages/sub-page.js";
 import { renderIndexPage } from "./lib/pages/index-page.js";
-// import { renderKeywordsPage } from "./lib/pages/keywords-page.js";
+import { renderKeywordsPage } from "./lib/pages/keywords-page.js";
 import { renderLecturesPage } from "./lib/pages/lectures-page.js";
-// import { renderQuestionsPage } from "./lib/pages/questions-page.js";
+import { renderQuizPage } from "./lib/pages/quiz-page.js";
 import { fetcher } from "./lib/fetcher.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -22,7 +22,7 @@ async function render(root, querystring) {
   } else if (content === "lectures") {
     await renderLecturesPage(root, indexJson, type, content);
   } else if (content === "questions") {
-    await renderQuestionsPage(root, indexJson, type, content);
+    await renderQuizPage(root, indexJson, type, content);
   } else {
     await renderSubpage(root, indexJson, type);
   }
