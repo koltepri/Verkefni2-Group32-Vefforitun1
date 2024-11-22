@@ -1,9 +1,10 @@
 import { renderSubpage } from "./lib/pages/sub-page.js";
 import { renderIndexPage } from "./lib/pages/index-page.js";
 // import { renderKeywordsPage } from "./lib/pages/keywords-page.js";
-// import { renderLecturesPage } from "./lib/pages/lectures-page.js";
+import { renderLecturesPage } from "./lib/pages/lectures-page.js";
 // import { renderQuestionsPage } from "./lib/pages/questions-page.js";
 import { fetcher } from "./lib/fetcher.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 async function render(root, querystring) {
   const indexJson = await fetcher("./data/index.json");
