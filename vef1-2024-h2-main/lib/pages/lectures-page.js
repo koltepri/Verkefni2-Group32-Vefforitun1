@@ -23,7 +23,11 @@ function createLectureHTML(lecture) {
         case "code":
           return e("pre", {}, e("code", {}, lectureItem.data));
         case "image":
-          return e("img", {}, e("src", {}, "../" + lectureItem.data));
+          return e("img", {
+            src: "/data/" + lectureItem.data, // 304 error fix?
+            alt: "Lecture image",
+            style: "max-width: 100%; height: auto; display: block;",
+          });
         default:
           return null;
       }
