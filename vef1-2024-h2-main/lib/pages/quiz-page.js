@@ -40,7 +40,6 @@ export async function renderQuizPage(root, indexJson, type, content) {
     "header",
     { class: "text-center py-4 mb-4 bg-light" },
     e("h1", {}, indexJson.title),
-    e("p", { class: "text-muted" }, `Category: ${indexJson.category}`),
   );
   headerElement.appendChild(renderNavigation(indexJson.navigation, type));
 

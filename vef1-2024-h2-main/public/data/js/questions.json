@@ -1,6 +1,6 @@
 {
-  "title": "HTML",
-  "category": "html",
+  "title": "JavaScript Spurningar",
+  "category": "js",
   "questions": [
     {
       "question": "Hvað er skrifað út eftir að eftirfarandi kóði er keyrður?\n\nconst items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n\nconst іtem = items\n  .map((i) => i * 2)\n  .filter(\n    (i) => i < 10\n  )\n  .find((i) => i > 6)\n\n\nconsole.log(item);",
