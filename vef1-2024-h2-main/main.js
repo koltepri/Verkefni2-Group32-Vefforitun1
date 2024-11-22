@@ -7,7 +7,7 @@ import { fetcher } from "./lib/fetcher.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 async function render(root, querystring) {
-  const indexJson = await fetcher("./data/index.json");
+  const indexJson = await fetcher("/data/index.json");
 
   const params = new URLSearchParams(querystring);
   const type = params.get("type");
